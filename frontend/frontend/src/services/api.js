@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:3000/api";
+const API_BASE_URL = "https://support-ticket-management-system-r7ad.onrender.com/api";
 
 const request = async (endpoint, options = {}) => {
   const token = localStorage.getItem("token");

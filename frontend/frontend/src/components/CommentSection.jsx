@@ -37,18 +37,13 @@ const CommentSection = ({ ticketId }) => {
       setError("");
       setSubmitting(true);
 
-      const data = await createComment(ticketId, {
+      await createComment(ticketId, {
         comment: content,
       });
 
-      const newComment = data.comment || data;
-
-      setComments((prevComments) => [
-        ...prevComments,
-        newComment,
-      ]);
-
       setContent("");
+
+      await loadComments();
     } catch (err) {
       setError(err.message);
     } finally {

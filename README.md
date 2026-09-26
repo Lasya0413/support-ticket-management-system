@@ -5,6 +5,7 @@ A full-stack web application for managing customer support tickets between custo
 ## Features
 
 ### Customer
+
 - Register and login
 - Create support tickets
 - View tickets
@@ -13,6 +14,7 @@ A full-stack web application for managing customer support tickets between custo
 - View ticket status updates
 
 ### Agent
+
 - Login
 - View all customer tickets
 - Update ticket status
@@ -26,6 +28,7 @@ A full-stack web application for managing customer support tickets between custo
 ## Technologies Used
 
 ### Frontend
+
 - React.js
 - Vite
 - JavaScript
@@ -33,15 +36,18 @@ A full-stack web application for managing customer support tickets between custo
 - React Router
 
 ### Backend
+
 - Node.js
 - Express.js
 - JWT Authentication
 - bcrypt
 
 ### Database
+
 - MySQL
 
 ### API Testing
+
 - Postman
 
 ## Project Structure
@@ -56,7 +62,6 @@ support-ticket-management-system/
 │   ├── middleware/
 │   ├── routes/
 │   ├── utils/
-│   ├── .env
 │   ├── package.json
 │   └── server.js
 │
@@ -71,34 +76,42 @@ support-ticket-management-system/
 │       └── vite.config.js
 │
 └── README.md
-Authentication
+```
+
+## Authentication
 
 The application uses JWT-based authentication.
 
-Users can register and login.
-Passwords are encrypted using bcrypt.
-JWT tokens are used to authenticate API requests.
-Role-based authorization is implemented for customers and agents.
-User Roles
-Customer
+- Users can register and login.
+- Passwords are encrypted using bcrypt.
+- JWT tokens are used to authenticate API requests.
+- Role-based authorization is implemented for customers and agents.
+
+## User Roles
+
+### Customer
 
 Customers can:
 
-Create tickets
-View their tickets
-Add comments
-View ticket updates
-Agent
+- Create tickets
+- View their tickets
+- Add comments
+- View ticket updates
+
+### Agent
 
 Agents can:
 
-View tickets
-Update tickets
-Assign tickets
-Delete tickets
-View users and agents
-Add comments
-Ticket Flow
+- View tickets
+- Update tickets
+- Assign tickets
+- Delete tickets
+- View users and agents
+- Add comments
+
+## Ticket Flow
+
+```text
 Customer
    ↓
 Creates Ticket
@@ -112,12 +125,25 @@ Agent Updates Ticket
 MySQL Database
    ↓
 Customer Dashboard
-API
-Backend Server
+```
+
+## API
+
+### Backend Server
+
+```text
 http://localhost:3000
-Frontend Server
+```
+
+### Frontend Server
+
+```text
 http://localhost:5173
-Main API Endpoints
+```
+
+### Main API Endpoints
+
+```text
 POST   /api/auth/register
 POST   /api/auth/login
 
@@ -132,38 +158,66 @@ POST   /api/tickets/:id/comments
 
 GET    /api/users
 GET    /api/users/agents
-How to Run
-Backend
+```
+
+## How to Run
+
+### Backend
 
 Open a terminal:
 
+```bash
 cd backend
 npm install
 npm start
-Frontend
+```
+
+### Frontend
 
 Open another terminal:
 
+```bash
 cd frontend/frontend
 npm install
 npm run dev
-Database Setup
-Create a MySQL database.
-Run the SQL commands from:
+```
+
+## Database Setup
+
+1. Create a MySQL database.
+
+2. Run the SQL commands from:
+
+```text
 backend/database/schema.sql
-Optional sample data can be inserted using:
+```
+
+3. Optional sample data can be inserted using:
+
+```text
 backend/database/seed.sql
-Configure your database credentials and JWT secret in the backend .env file.
-Testing
+```
+
+4. Configure your database credentials and JWT secret in the backend `.env` file.
+
+## Testing
 
 API endpoints were tested using Postman.
 
 The application was also tested through the React frontend for:
 
-Customer registration and login
-Customer ticket creation
-Agent ticket viewing
-Agent ticket updates
-Customer viewing updated ticket status
-Ticket comments
-Role-based authorization
+- Customer registration and login
+- Customer ticket creation
+- Agent ticket viewing
+- Agent ticket updates
+- Customer viewing updated ticket status
+- Ticket comments
+- Role-based authorization
+
+## Security
+
+Sensitive files such as `.env` and dependencies such as `node_modules` are excluded from Git using `.gitignore`.
+
+## Author
+
+**Lasya0413**

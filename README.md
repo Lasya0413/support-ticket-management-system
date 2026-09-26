@@ -71,3 +71,99 @@ support-ticket-management-system/
 │       └── vite.config.js
 │
 └── README.md
+Authentication
+
+The application uses JWT-based authentication.
+
+Users can register and login.
+Passwords are encrypted using bcrypt.
+JWT tokens are used to authenticate API requests.
+Role-based authorization is implemented for customers and agents.
+User Roles
+Customer
+
+Customers can:
+
+Create tickets
+View their tickets
+Add comments
+View ticket updates
+Agent
+
+Agents can:
+
+View tickets
+Update tickets
+Assign tickets
+Delete tickets
+View users and agents
+Add comments
+Ticket Flow
+Customer
+   ↓
+Creates Ticket
+   ↓
+MySQL Database
+   ↓
+Agent Dashboard
+   ↓
+Agent Updates Ticket
+   ↓
+MySQL Database
+   ↓
+Customer Dashboard
+API
+Backend Server
+http://localhost:3000
+Frontend Server
+http://localhost:5173
+Main API Endpoints
+POST   /api/auth/register
+POST   /api/auth/login
+
+GET    /api/tickets
+POST   /api/tickets
+GET    /api/tickets/:id
+PUT    /api/tickets/:id
+DELETE /api/tickets/:id
+
+GET    /api/tickets/:id/comments
+POST   /api/tickets/:id/comments
+
+GET    /api/users
+GET    /api/users/agents
+How to Run
+Backend
+
+Open a terminal:
+
+cd backend
+npm install
+npm start
+Frontend
+
+Open another terminal:
+
+cd frontend/frontend
+npm install
+npm run dev
+Database Setup
+Create a MySQL database.
+Run the SQL commands from:
+backend/database/schema.sql
+Optional sample data can be inserted using:
+backend/database/seed.sql
+Configure your database credentials and JWT secret in the backend .env file.
+Testing
+
+API endpoints were tested using Postman.
+
+The application was also tested through the React frontend for:
+
+Customer registration and login
+Customer ticket creation
+Agent ticket viewing
+Agent ticket updates
+Customer viewing updated ticket status
+Ticket comments
+Role-based authorization

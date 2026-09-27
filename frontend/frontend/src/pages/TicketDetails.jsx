@@ -49,14 +49,19 @@ const TicketDetails = () => {
       setError("");
       setSaving(true);
 
-      const data = await updateTicket(id, {
+      await updateTicket(id, {
         status,
         priority,
       });
 
+      // Fetch the updated ticket again
+      const data = await getTicketById(id);
       const updatedTicket = data.ticket || data;
 
+      // Update the displayed ticket immediately
       setTicket(updatedTicket);
+      setStatus(updatedTicket.status || "");
+      setPriority(updatedTicket.priority || "");
     } catch (err) {
       setError(err.message);
     } finally {

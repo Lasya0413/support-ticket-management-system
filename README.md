@@ -218,10 +218,6 @@ The application was also tested through the React frontend for:
 - Ticket comments
 - Role-based authorization
 
-## Security
-
-Sensitive files such as `.env` and dependencies such as `node_modules` are excluded from Git using `.gitignore`.
-
 ## Author
 
 **Lasya0413**

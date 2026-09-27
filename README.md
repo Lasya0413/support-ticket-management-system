@@ -2,6 +2,10 @@
 
 A full-stack web application for managing customer support tickets between customers and support agents.
 
+## 🎥 Demo Video
+
+[▶️ Watch the Project Demo on Loom](https://www.loom.com/share/64856991baf647a0ab6e15260bcaee0b)
+
 ## Features
 
 ### Customer
